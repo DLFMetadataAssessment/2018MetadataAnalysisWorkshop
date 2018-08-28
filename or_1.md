@@ -1,12 +1,10 @@
-# OpenRefine, DLF Metadata QA Workshop 2017
+# OpenRefine, DLF Metadata QA Workshop 2018
 
 * OpenRefine Tutorial, Hour One (10:45 AM - 12:00 PM), led by [Scotty Carlson, Metadata Coordinator @ Fondren Library, Rice University](mailto:sjc5@rice.edu)*
 
 ## Goals of This Module:
-* Basic Data Assessment
-* Data Remediation
-* Data Validation
-* Data Enhancement
+* Intro to the OpenRefine Interface
+* Basic Data Assessment Tools in OR
 
 ## What is OpenRefine?
 OpenRefine (formerly Google Refine) is a powerful tool for working with messy data, including tools for cleaning, transforming from one format into another, extending with web services, and connecting to external data.
@@ -35,30 +33,19 @@ Based on these assessment measures, what assessment techniques can be applied to
 * Can the data be enriched with new information?
 
 ## Table of Contents
-
 * Importing Data
 * The OR Interface
 * Assessment Tools
-* Data Remediation
-* Validating Data
-* Data Enhancement
-* Getting Data Out
 
 ## Importing Data
 
 From Refine's start screen, you can create projects from structured data files, continue working on past projects, and import projects that were exported out of OpenRefine. (Do not use the **Open Project** tab to create a project -- this is only for importing existing OpenRefine projects. More on that later.)
 
-Refine can import TSV, CSV, Excel, JSON, and Google Data documents as well as parse raw, unformatted data copied and pasted using the Clipboard function. For this session, we will use sample data from UPenn's [Schoenberg Database of Manuscripts](https://sdbm.library.upenn.edu/), which you can download [here](https://github.com/DLFMetadataAssessment/DLFMetadataQAWorkshop17/blob/master/OR-Data/schoenberg.xml?raw=true) as an XML file; while Refine does support importing XML data, [the program suffers from a bug that can generate thousands of blank lines when importing XML](https://github.com/OpenRefine/OpenRefine/issues/1095), necessitating some upfront cleanup. Instead, I recommend converting XML data to a tabular format (CSV, TSV, etc.) before importing; the last thing we will do is export it back to an XML file.
+Refine can import TSV, CSV, Excel, JSON, and Google Data documents as well as parse raw, unformatted data copied and pasted using the Clipboard function. For this session, we will use sample CSV data from UPenn's [Schoenberg Database of Manuscripts](https://sdbm.library.upenn.edu/), which you can find [here](https://github.com/DLFMetadataAssessment/2018MetadataAnalysisWorkshop/tree/master/or_data).
 
-There are lots of ways to convert XML to CSV, but we can get the job done quickly in Python with the library [**xmlutils**](https://github.com/knadh/xmlutils.py); run `pip install xmlutils` in your local shell to get it. (xmlutils works best with Python 2.7.) Once installed, we can convert our XML with the command:
+*Note: while Refine does support importing XML data, [the program suffers from a bug that can generate thousands of blank lines when importing XML](https://github.com/OpenRefine/OpenRefine/issues/1095), necessitating some upfront cleanup. Instead, I recommend converting XML data to a tabular format (CSV, TSV, etc.) before importing.*
 
-`xml2csv --input "schoenberg.xml" --output "schoenberg.csv" --tag "record"`
-
-![refine-1.png](images/refine-1.png)
-
-You should now have a CSV file containing 1,633 records. Under **Create Project**, select this file to import on the home screen. (If xmlutils is giving you a hard time, find a CSV copy of the data [here](https://github.com/DLFMetadataAssessment/DLFMetadataQAWorkshop17/raw/master/OR-Data/schoenberg.csv).)
-
-You should now see a parsing window. Here, Refine previews what your data will look like in the main interface. Refine has automatically skipped the first row of data and parsed them to column headers. (This can be changed, if need be.) As you change parameter, so will the preview. Refine does not choose a default character encoding, so make sure you set it to **UTF-8**.
+Under **Create Project**, select our sample CSV file to import on the home screen. You should now see a parsing window. Here, Refine previews what your data will look like in the main interface. Refine has automatically skipped the first row of data and parsed them to column headers. (This can be changed, if need be.) As you change parameter, so will the preview. Refine does not choose a default character encoding, so make sure you set it to **UTF-8**.
 
 Click **Create Project**.
 
