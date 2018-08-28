@@ -7,6 +7,12 @@
 * Data Validation
 * Data Enhancement
 
+## Table of Contents
+* Data Remediation
+* Validating Data
+* Data Enhancement
+* Getting Data Out
+
 ## Data Remediation
 
 ### Clustering
