@@ -1,6 +1,7 @@
 # Metadata Analysis Workshop
 
 ## About the Workshop
+This five-hour workshop is a revised version of the metadata analysis workshop offered as a post conference workshop at last year’s DLF Forum. This workshop will introduce participants to the Metadata Assessment Framework developed by the DLF Assessment Interest Group, Metadata Working Group and teach participants how to use this Framework as a guide for analyzing their own metadata. We will also discuss application profiles and metadata crosswalking and transformation. Participants will also learn how to use open source tools to analyze and remediate metadata. Topics covered include metadata application profiles, OpenRefine, tools for extracting and qc'ing embedded metadata from digital objects, as well as time for participants to discuss their own metadata assessment and remediation plans in breakout sessions
 
 ## Workshop Schedule
 
