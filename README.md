@@ -54,7 +54,5 @@ Linux | Download the TAR package, extract it, and run `./refine` to start. | [Li
 
 Upon launch, OpenRefine will run as a local server, opening your computer's browser. As long as OpenRefine is running, you can point your browser at http://127.0.0.1:3333/ to use it, even in several browser tabs/windows.
 
-![OpenRefine User Start Window](images/openrefine.png)
-
 ## License
 All instructional materials are being made available under a [Creative Commons Attribution license] (https://creativecommons.org/licenses/by/4.0/). Feel free to reuse these materials according to these license terms.
