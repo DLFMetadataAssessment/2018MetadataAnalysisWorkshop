@@ -14,7 +14,7 @@ This five-hour workshop is a revised version of the metadata analysis workshop o
 | 10:45 - 12:00 pm |  OpenRefine Tutorial Hour One | Scott | |
 | 12:00 - 12:10 pm | Morning wrap-up | | |
 | 12:10 - 1:30 pm | Lunch | - | |
-| 1:30 - 2:15 pm | OpenRefine Tutorial Hour Two | | |
+| 1:30 - 2:15 pm | OpenRefine Tutorial Hour Two | Scott | |
 | 2:15 - 2:45 pm | Metadata Analysis Tools Demo | Amy | |
 | 2:45-3:15 pm | Break-out sessions | | |
 | 3:15-3:30 pm | Wrap-up | | |
@@ -40,17 +40,17 @@ We request that all participants **bring their own laptop**, preferably one you 
 ### OpenRefine (Required)
 OpenRefine is a graphical-interface tool for cleaning, transforming, and enriching imported metadata. OpenRefine is strongly recommended, as it will be discussed and utilized in-depth as section five of the workshop.
 
-The latest stable release of OpenRefine is version 2.7; an earlier iteration (version 2.5) of the tool, known as Google Refine, still works, but the workshop will use version 2.7.
+The latest stable release of OpenRefine is version 3.0. OpenRefine requires a working Java runtime environment, otherwise the program will not start.
+
+OpenRefine is available for Windows, Mac OS X, and Linux. Please note that laptops/devices running mobile operating systems and web app platforms (Chrome OS, Android, iOS) are NOT supported by OpenRefine.
 
 Platform | Installation Instructions | Link to Installation Package
 ---------|---------------------------|--------------------------
-Windows  | Download the ZIP package, unzip, and double-click `openrefine.exe` to start. | [Link](https://github.com/OpenRefine/OpenRefine/releases/download/2.7/openrefine-win-2.7.zip)
-Mac OS X | Download the DMG package, open, drag the application icon into the Applications folder, and double click it to start. | [Link](https://github.com/OpenRefine/OpenRefine/releases/download/2.7/openrefine-mac-2.7.dmg)
-Linux    | Download the TAR package, extract it, and run `./refine` to start. | [Link](https://github.com/OpenRefine/OpenRefine/releases/download/2.7/openrefine-linux-2.7.tar.gz)
+Windows  | Download the ZIP package, unzip, and double-click `openrefine.exe` to start. | [Link](https://github.com/OpenRefine/OpenRefine/releases/download/3.0/openrefine-win-3.0.zip)
+Mac OS X | Download the DMG package, open, drag the application icon into the Applications folder, and double click it to start. | [Link](https://github.com/OpenRefine/OpenRefine/releases/download/3.0/openrefine-mac-3.0.dmg)
+Linux | Download the TAR package, extract it, and run `./refine` to start. | [Link](https://github.com/OpenRefine/OpenRefine/releases/download/3.0/openrefine-linux-3.0.tar.gz)
 
 #### OpenRefine Install Test
-
-OpenRefine requires a working Java runtime environment, otherwise the program will not start.
 
 Upon launch, OpenRefine will run as a local server, opening your computer's browser. As long as OpenRefine is running, you can point your browser at http://127.0.0.1:3333/ to use it, even in several browser tabs/windows.
 
