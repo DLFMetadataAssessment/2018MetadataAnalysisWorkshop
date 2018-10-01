@@ -1,4 +1,4 @@
-# Metadata Analysis Workshop
+# 2018 DLF Metadata Analysis Workshop
 
 ## About the Workshop
 This five-hour workshop is a revised version of the metadata analysis workshop offered as a post conference workshop at last year’s DLF Forum. This workshop will introduce participants to the Metadata Assessment Framework developed by the DLF Assessment Interest Group, Metadata Working Group and teach participants how to use this Framework as a guide for analyzing their own metadata. We will also discuss application profiles and metadata crosswalking and transformation. Participants will also learn how to use open source tools to analyze and remediate metadata. Topics covered include metadata application profiles, OpenRefine, tools for extracting and qc'ing embedded metadata from digital objects, as well as time for participants to discuss their own metadata assessment and remediation plans in breakout sessions
@@ -21,4 +21,40 @@ This five-hour workshop is a revised version of the metadata analysis workshop o
 
 ## Contact Before, During, After the Workshop
 
+If you have questions or concerns leading up to or after the workshop, you can get in touch in a number of ways:
+
+- Please email Anna Neatrour, University of Utah Digital Initiatives Librarian and workshop organizer, particularly with logistical or registration questions: [anna dot neatrour at utah dot edu](mailto:anna.neatrour@utah.edu).
+- If you feel comfortable doing so, please open an issue on this GitHub repository, particularly with any questions dealing with workshop preparation or any installation issues. This allows multiple workshop leaders to respond as able, and other participants can also learn (since we're sure the same questions will come up multiple times): https://github.com/DLFMetadataAssessment/2018MetadataAnalysisWorkshop/ (this will require that you login or create a free account with GitHub).
+
+During the workshop, we will indicate the best ways to get help or communicate a question/comment - however, this workshop is intended to be informal, so feel free to speak up or indicate you have a question at any time.
+
+## Our Expectations of You
+
+To keep this workshop a safe and inclusive space, we ask that you review and follow the [the Recurse Center Social Rules (aka Hacker School Rules)](https://www.recurse.com/manual#sub-sec-social-rules).
+
+## Participant Requirements
+
+We request that all participants **bring their own laptop**, preferably one you have installation or admin privileges on, to the workshop. The laptop should have the software listed below installed as well as an up-to-date modern web browser (basically, not Internet Explorer). If you have any issues with the requested set-up, please contact us ASAP using the [communication methods detailed above](#contact-before-during-after-the-workshop).
+
 ## Workshop Requirements
+### OpenRefine (Required)
+OpenRefine is a graphical-interface tool for cleaning, transforming, and enriching imported metadata. OpenRefine is strongly recommended, as it will be discussed and utilized in-depth as section five of the workshop.
+
+The latest stable release of OpenRefine is version 2.7; an earlier iteration (version 2.5) of the tool, known as Google Refine, still works, but the workshop will use version 2.7.
+
+Platform | Installation Instructions | Link to Installation Package
+---------|---------------------------|--------------------------
+Windows  | Download the ZIP package, unzip, and double-click `openrefine.exe` to start. | [Link](https://github.com/OpenRefine/OpenRefine/releases/download/2.7/openrefine-win-2.7.zip)
+Mac OS X | Download the DMG package, open, drag the application icon into the Applications folder, and double click it to start. | [Link](https://github.com/OpenRefine/OpenRefine/releases/download/2.7/openrefine-mac-2.7.dmg)
+Linux    | Download the TAR package, extract it, and run `./refine` to start. | [Link](https://github.com/OpenRefine/OpenRefine/releases/download/2.7/openrefine-linux-2.7.tar.gz)
+
+#### OpenRefine Install Test
+
+OpenRefine requires a working Java runtime environment, otherwise the program will not start.
+
+Upon launch, OpenRefine will run as a local server, opening your computer's browser. As long as OpenRefine is running, you can point your browser at http://127.0.0.1:3333/ to use it, even in several browser tabs/windows.
+
+![OpenRefine User Start Window](images/openrefine.png)
+
+## License
+All instructional materials are being made available under a [Creative Commons Attribution license] (https://creativecommons.org/licenses/by/4.0/). Feel free to reuse these materials according to these license terms.
