@@ -16,7 +16,7 @@ This five-hour workshop is a revised version of the metadata analysis workshop o
 | 12:10 - 1:30 pm | Lunch | - | |
 | 1:30 - 2:15 pm | OpenRefine Tutorial Hour Two | Scott | [OpenRefine Tutorial, Hour Two](https://github.com/DLFMetadataAssessment/2018MetadataAnalysisWorkshop/blob/master/or_2.md) |
 | 2:15 - 2:45 pm | Metadata Analysis Tools Demo | Amy | |
-| 2:45-3:15 pm | Break-out sessions | Workshop Participants | |
+| 2:45-3:15 pm | Ligntning Talks and Discussion | Workshop Participants | |
 | 3:15-3:30 pm | Wrap-up | Kate | |
 
 ## Contact Before, During, After the Workshop
