@@ -7,7 +7,7 @@ This five-hour workshop is a revised version of the metadata analysis workshop o
 
 | Time | Lesson | Leader | Material |
 | ----- | ----- | ----- | ----- |
-| 9:00 – 9:40 am | Introduction | Kate | |
+| 9:00 – 9:40 am | Introduction | Kate | [Slides](https://github.com/DLFMetadataAssessment/2018MetadataAnalysisWorkshop/blob/master/slides/metadata_analysis_workshop_intro.pptx) |
 | 9:40- 10:20 am | Application Profile active learning exercise | | |
 | 10:20 - 10:30 am | Metadata Audit Tool Demo | Teresa | |
 | 10:30 - 10:45 am | Break | - | |
