@@ -179,21 +179,23 @@ You should now have a new column of addresses next to *PrimarySeller*.
 
 ### Enriching with Web APIs
 
-Depending on what you need or want from your data, it may be pertinent to enrich existing data from an outside source. Open web APIs are great for this, because Refine can send out such web API requests, and parse the results (especially if the response is in JSON, XML, and HTML).
+Depending on what you need or want from your data, it may be pertinent to enrich existing data from an outside source. Open web APIs are great for this, because Refine can send out such web API requests and parse the results (especially if the response is in JSON, XML, or HTML).
 
 What if we wanted our Schoenberg data to contain geolocational data for the auction houses that sold some of the manuscripts? That metadata could potentially fuel a discovery layer to see where most of the manuscripts were sold.
 
-1. First, [download this Refine project](https://github.com/DLFMetadataAssessment/DLFMetadataQAWorkshop17/blob/master/OR-Data/Auction-Houses.openrefine.tar.gz?raw=true), which contains some of the addresses of auction houses found in our Schoenberg data.
-2. Open a new browser tab and navigate to http://127.0.0.1:3333/, which will open a new Refine window. Click the lefthand **Import Project** tab and open *Auction-Houses.openrefine.tar.gz*. You should be looking at a previously worked on Refine project with two columns: *Company* and *Address*.
-3. On the dropdown for *Address*, select **Add Column** > **Add column by fetching URLs**. Name this new column *JSON*.
-4. Run this GREL expression: `"https://maps.googleapis.com/maps/api/geocode/json?address=" + escape(value,"url")`
+Unfortunately, as of summer of 2018, Google's robust Maps API has been restricted in favor of subscription costs for their services. In the following activity, we will use a very small dataset as a demo API with some geocoded metadata.
 
-The new column should be filled with JSON data from Google's Maps API. Now let's get the latitude and longitude coordinates for each address.
+1. First, navigate to the last column in the project, *api_codes*. Select records from three countries in the *Place* column (Spain, Egypt, and the Netherlands) have been given one-digit identifiers.
+2. On the dropdown for *api_codes*, select **Add Column** > **Add column by fetching URLs**. Name this new column *JSON*.
+3. Run this GREL expression: `"https://my-json-server.typicode.com/DLFMetadataAssessment/2018MetadataAnalysisWorkshop/entities/=" + value`
+4. Set the *Throttle Delay* to 1,000 miliseconds (aka one second).
+
+The new column should be filled with JSON data from our demo API. Now let's get the latitude and longitude coordinates for each country.
 
 5. On the dropdown for *JSON*, select **Add Column** > **Add column based on this column**. Name this new column *Coordinates*.
-6. Run this GREL expression: `value.parseJson().results[0]["geometry"]["location"]["lat"] + ',' + value.parseJson().results[0]["geometry"]["location"]["lng"]`
+6. Run this GREL expression: `value.parseJson()["lat"] + ', ' + value.parseJson()["lng"]`
 
-This new column is filled with parsed JSON data featuring the exact coordinates for each address.
+This new column is filled with parsed JSON data featuring the coordinates for each country.
 
 ## Getting Data Out of OpenRefine
 
