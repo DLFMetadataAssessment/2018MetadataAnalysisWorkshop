@@ -22,7 +22,7 @@ Clustering can raise some interesting assessment questions: ***Are data values/t
 #### Exercise
 <detail>
 
-The default Cluster method, Key Collision/Fingerprint, is designed to provide as few false-positive results as possible. Other cluster functions will give you a wide range of supposed inconsistencies. Take 5 minutes to play around with the clustering results.
+The default Cluster method, Key Collision/Fingerprint, is designed to provide as few false-positive results as possible. Other cluster functions will give you a wide range of supposed inconsistencies. Take 5-10 minutes to play around with the clustering results.
 
 When finsihed, re-join the values with a pipe character: **Edit Cells** > **Join Multi-Valued Cells**.
 
@@ -86,6 +86,12 @@ Stack these three commands:
 
 In the main Refine window, your column values should be in green, indicating they are no longer text strings.
 
+Why would we change text into date content? Once datachunks are coded as dates, you can do more with them! You can rearrange the date format into a different, or more preferred, format; you can also create timeline facets to visualize your data:
+
+![refine-11.png](images/refine-11.png)
+
+![refine-11.png](images/refine-12.png)
+
 </details>
 
 #### Exercise 2: Removing Problematic Delimiters
@@ -104,9 +110,13 @@ First, undo any split values on the Author column; then, run a filter on it. We'
 
 This should give us 32 values. The first two can be remediated by hand directly from the facet. Instead of editing the remaining ones by hand, we will open a Transform window on our filtered column, and use this GREL:
 
-`value.replace(/^\|/, '').replace('| | |','|').replace('| |','|').replace(/\|$/, '')`
+`value.replace(/^\|/, '').replace('| | |','|').replace('| |','|').replace(/\|$/, '').replace(/^\ $/, '')`
 
-The first value of this Replace command is a RegEx that isolates the pipe character when it appears at the beginning of the string, replacing it with nothing; the two middle replacements looks for multiple pipes separated with white space; the last looks for single pipes at the ends of values.
+This RegEx explained:
+1. The first value of this Replace command is a RegEx that isolates the pipe character when it appears at the beginning of the string, replacing it with nothing;
+2. The second and third look for multiple pipes separated with white space, replacing them with a single pipe;
+3. The fourth looks for single pipes at the ends of values; and
+4. The final cleans up any entries that only have a blank space left.
 
 Once the transformation is run, you should be left with 1,633 records again.
 
@@ -123,7 +133,7 @@ Reconciliation allows you to match your data against external data services to r
 Let's try out a Reconciliation example using [Jeff Chiu's](https://github.com/codeforkjeff) VIAF Reconciliation service. (Note: Jeff's original version of this reconciliation service has been superseded by a new version, which can be found [here](https://github.com/codeforkjeff/conciliator). However, since our needs are super low for this example, we can use his deprecated public server at http://refine.codefork.com/. If you plan to play around with his service on your own, use the newer version.)
 
 1. First, let's use our split apart *Author* column. Let's facet on the column: **Facet** > **Text facet**
-2. In the facet, let's **Include** the following five author names: 'Aesop', 'Aristotle', 'Caesar, Julius', 'Chaucer, Geoffrey', and 'Dante Alighieri'. You should see 19 matching records/rows.
+2. In the facet, let's **Include** the following five author names: 'Aesop', 'Aristotle', 'Caesar, Julius', 'Chaucer, Geoffrey', and 'Dante Alighieri'. You should see 19 matching records.
 3. In the dropdown menu, select **Reconcile** > **Start Reconciling**.
 4. Click **Add Standard Service** and in the dialogue that appears, enter: http://refine.codefork.com/reconcile/viaf
 5. Since we know we are searching for the names of people, check the bubble next to **People** under **Reconcile each cell to an entity of one of these types**.
@@ -151,6 +161,22 @@ Once you have this new column, reconciliation data can be dispatched by selectin
 
 ## Data Enhancement
 
+### Cross, OpenRefine's VLOOKUP Function
+
+OpenRefine does just edit and remediate data -- it's also built to enrich what's already there from outside sources. One of these outside sources can be another Refine project, using a GREL expression not unlike a VLOOKUP formula in Excel..
+
+We're going to head back to our OR data and find the TAR package, *Auction-Houses.openrefine.tar.gz*. let's open a new Refine window by clicking on the logo and click **Import Project.** Select the TAR file; a new project, *Auction-Houses*, should open.
+
+*Auction-Houses* contains address information for several of the entities in the *PrimarySeller* column in our Schoenberg data. We're going to use the *PrimarySeller* and *Company* columns as our matchpoint. The structure of a Cross GREL expression looks like this:
+
+`cell.cross("[Project with Data We Want]", "[Project's Matching Column]")[0].cells["[Column Data We Want]"].value`
+
+So, we will select **Add Column** > **Add column based on this column** on *PrimarySeller* and make a new column, *Addresses*, using this GREL expression:
+
+`cell.cross("Auction-Houses", "Company")[0].cells["Address"].value`
+
+You should now have a new column of addresses next to *PrimarySeller*.
+
 ### Enriching with Web APIs
 
 Depending on what you need or want from your data, it may be pertinent to enrich existing data from an outside source. Open web APIs are great for this, because Refine can send out such web API requests, and parse the results (especially if the response is in JSON, XML, and HTML).
@@ -168,20 +194,6 @@ The new column should be filled with JSON data from Google's Maps API. Now let's
 6. Run this GREL expression: `value.parseJson().results[0]["geometry"]["location"]["lat"] + ',' + value.parseJson().results[0]["geometry"]["location"]["lng"]`
 
 This new column is filled with parsed JSON data featuring the exact coordinates for each address.
-
-### Cross, OpenRefine's VLOOKUP Function
-
-Now that we have geo-coordinates, let's go back to our Schoenberg project and enrich the data with this new geographic information. To do this, we can use a **Cross** GREL, a command not unlike a VLOOKUP formula in Excel.
-
-The structure of a Cross GREL expression looks like this:
-
-`cell.cross("[Source Project]", "[Matching Column]")[0].cells["[Column Data We Want]"].value`
-
-So, we will select **Add Column** > **Add column based on this column** on *PrimarySeller* and make a new column, *LatLng*, using this GREL expression:
-
-`cell.cross("Auction-Houses", "Company")[0].cells["Coordinates"].value`
-
-You should now have a new column of coordinates next to *PrimarySeller*.
 
 ## Getting Data Out of OpenRefine
 
