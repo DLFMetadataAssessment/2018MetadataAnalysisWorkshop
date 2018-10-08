@@ -1,0 +1,25 @@
+{
+    "entities": [
+        {
+            "id": 1,
+            "name": "Egypt",
+            "lat": 26.820553,
+            "lng": 30.802498
+        },
+        {
+            "id": 2,
+            "name": "Spain",
+            "lat": 40.463667,
+            "lng": -3.74922
+        },
+        {
+            "id": 3,
+            "name": "Netherlands",
+            "lat": 52.132633,
+            "lng": 5.291266
+        }
+    ],
+    "profile": {
+        "name": "countries"
+    }
+}
