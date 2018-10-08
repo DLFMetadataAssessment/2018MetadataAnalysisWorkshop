@@ -52,7 +52,7 @@ Click **Create Project**.
 ## The OR Interface
 After the data loads, you will be staring at the default Refine interface for your new project. In the upper lefthand corner, you will see your project name (which can be changed by clicking on it) next to the OpenRefine logo. (If you need to return to the starting screen, click that logo.)
 
-Each of the columns in the data have drop-down menus (the upside down triangles). When you select an option in a particular column (e.g. to make a change to the data), it will affect all the cells in the column currently selected. (We will discuss this more below in Faceting). The column at the extreme left of the screen is the **All Data** menu. The All drop-down will let you make changes across all columns in one pass. It also manages the Star and Flag toggles -- more on that in Faceting.
+Each of the columns in the data have drop-down menus (the upside down triangles). When you select an option in a particular column (e.g. to make a change to the data), it will affect all the cells in the column currently selected. (We will discuss this later on in Faceting). The column at the extreme left of the screen is the **All Data** menu. The All drop-down will let you make changes across all columns in one pass. It also manages the Star and Flag toggles -- more on that in Faceting.
 
 ### Rows vs. Records
 
@@ -99,9 +99,9 @@ Let's try it ourselves on the ID column -- the data is (mostly) already sorted f
 
 ![refine-4.png](images/refine-4.png)
 
-(Of course, it is imperative to let Refine know that we are sorting numbers and not strings of text, otherwise our sort will not be as expected.)
+(Of course, it is imperative to let Refine know that we are sorting *numbers* and not strings of text, otherwise our sort will not be as expected.)
 
-Note that in the furthest lefthand column, the Refine-appointed row ID numbers are still tied to their original rows. This is because sorts in OpenRefine are temporary -- if you remove the Sort, the data will go back to its original "unordered" form. You can do this by selecting **Sort** > **Remove Sort**.
+Note that in the furthest lefthand column, the Refine-appointed row ID numbers are still tied to their original rows. This is because sorts in OpenRefine are only *temporary*; if you remove the Sort, the data will go back to its original "unordered" form. You can do this by selecting **Sort** > **Remove Sort**.
 
 ## Assessment Tools
 
@@ -118,13 +118,13 @@ Facet information appears in the left hand panel in the OpenRefine interface. Re
 
 Let's create a facet on the *Binding* column. Select: **Facet** > **Text facet**. A new facet should appear in the lefthand window.
 
-Clicking on any of the entries in the facet window will change the interface to include only the record(s) featuring that facet entry. (If we had set our view to Rows, only the specific rows containing that facet entry would appear.) If you move your mouse pointer over an entry in the facet window, you can select multiple facet entries using the **Include** popup next to each entry. You can also select **Invert** at the top of the facet window to automatically select the opposite of the values you chose.
+Clicking on any of the entries in the facet window will change the interface to include only the record(s) featuring that facet entry. If you move your mouse pointer over an entry in the facet window, you can select multiple facet entries using the **Include** popup next to each entry. You can also select **Invert** at the top of the facet window to automatically select the opposite of the values you chose.
 
 If you move your mouse pointer over an entry in the facet window, you'll also see the option to **Edit** the term comes up. By changing the text in the edit box and clicking Apply, you will automatically change all instances in the data at once.
 
 In terms of assesssment, how much of each represented element/field is empty? Try creating a custom facet for empty values: **Facet** > **Customized Facets** > **Facet by Blank**
 
-The faceted values for *True* are cells that are empty, giving us an idea of how much data is missing. (Of course, this doesn't answer WHY the data is missing.)
+The faceted values for *True* are cells that are empty, giving us an idea of how much data is missing. (Of course, this doesn't answer *why* the data is missing.)
 
 ### Filtering
 
@@ -141,3 +141,7 @@ Let's try this on the Provenance column. Enter a single pipe character (|) in th
 ![refine-5.png](images/refine-5.png)
 
 Whenever we're done, we can rejoin this split data by selecting **Edit Cells** > **Split Multi-Valued Cells** and choosing the appropriate delimiter.
+
+## Session 1 Questions?
+
+Go to [Session 2](https://github.com/DLFMetadataAssessment/2018MetadataAnalysisWorkshop/blob/master/or_2.md)
