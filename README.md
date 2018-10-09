@@ -11,10 +11,10 @@ This five-hour workshop is a revised version of the metadata analysis workshop o
 | 9:40- 10:20 am | Application Profile active learning exercise | Anna (for Gretchen) | [Slides](https://github.com/DLFMetadataAssessment/2018MetadataAnalysisWorkshop/blob/master/slides/DLFWorkshop2018.pptx), [Activity Materials](https://github.com/DLFMetadataAssessment/2018MetadataAnalysisWorkshop/tree/master/activities) |
 | 10:20 - 10:30 am | Metadata Audit Tool Demo | Teresa | |
 | 10:30 - 10:45 am | Break | - | - |
-| 10:45 - 12:00 pm |  OpenRefine Tutorial Hour One | Scott | [OpenRefine Tutorial, Hour One](https://github.com/DLFMetadataAssessment/2018MetadataAnalysisWorkshop/blob/master/or_1.md) |
+| 10:45 - 12:00 pm |  OpenRefine Tutorial Hour One | Scott | [Hour One](https://github.com/DLFMetadataAssessment/2018MetadataAnalysisWorkshop/blob/master/slides/or_1.md), [Slides](https://github.com/DLFMetadataAssessment/2018MetadataAnalysisWorkshop/blob/master/slides/OpenRefine.pptx) |
 | 12:00 - 12:10 pm | Morning wrap-up | Anna | |
 | 12:10 - 1:30 pm | Lunch | - | - |
-| 1:30 - 2:15 pm | OpenRefine Tutorial Hour Two | Scott | [OpenRefine Tutorial, Hour Two](https://github.com/DLFMetadataAssessment/2018MetadataAnalysisWorkshop/blob/master/or_2.md) |
+| 1:30 - 2:15 pm | OpenRefine Tutorial Hour Two | Scott | [Hour Two](https://github.com/DLFMetadataAssessment/2018MetadataAnalysisWorkshop/blob/master/slides/or_2.md) |
 | 2:15 - 2:45 pm | Metadata Analysis Tools Demo | Amy | |
 | 2:45-3:15 pm | Ligntning Talks and Discussion | Workshop Participants | |
 | 3:15-3:30 pm | Wrap-up | Kate | [Slides](https://github.com/DLFMetadataAssessment/2018MetadataAnalysisWorkshop/blob/master/slides/wrap-up.pptx) |
