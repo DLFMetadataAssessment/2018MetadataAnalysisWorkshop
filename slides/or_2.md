@@ -153,9 +153,9 @@ In any case, these are the right records, so we will click the double checkmark 
 
 So we're done, right? **Nope.** All we have right now is the standard VIAF name form of the entity. This is good, but we still need to extract this name form to its own column, its identifier, or both.
 
-On the Authors column, select **Edit column** > **Add column based on this column...**. In the transformation window, enter your GREL:
+On the Authors column, select **Edit column** > **Add column based on this column...**. Name this column **viafIDs**. In the transformation window, enter your GREL:
 `'https://viaf.org/viaf/' + cell.recon.match.id + '/'`
-This will not only extract the identifier for the entity, but create the full VIAF URI. Name this column **viafIDs**.
+This will not only extract the identifier for the entity, but create the full VIAF URI.
 
 Once you have this new column, reconciliation data can be dispatched by selecting **Reconcile** > **Actions** > **Clear reconciliation data**.
 
@@ -201,7 +201,7 @@ This new column is filled with parsed JSON data featuring the coordinates for ea
 
 When your data has been cleaned to your satisfaction, you can export it to a variety of different file formats. Be sure all text filters and facet windows are closed, and that you have joined any split multi-valued data before you export! Clicking on the **Export** button in the upper right corner of the screen will display the export file formats available. **Export Project**, on the other hand, will save a copy of your Refine project as a TAR archive that can be shared with other people and opened in other Refine installations.
 
-Refine's **Templating** function allows you to export your data in a "roll your own" fashion. As Refine's wiki states, "this is useful for formats that we don't support natively yet, or won't support." Currently, Templating is set up to generate a single JSON document of your data by default; with a few changes, we can set up a template to get our enriched Schoenberg data back to an XML file. You'll need to fill out these spaces with the below template:
+Refine's **Templating** function allows you to export your data in a "roll your own" fashion. As Refine's wiki states, "this is useful for formats that we don't support natively yet, or won't support." Currently, Templating is set up to generate a single JSON document of your data by default; with a few changes, we can set up a template to put our enriched Schoenberg data out to, say, an XML file. You'll need to fill out these spaces with the below template:
 
 Prefix:
 ```
@@ -213,8 +213,8 @@ Prefix:
 Row template:
 ```
    <record>
-      <Duplicates>{{escape(cells["Duplicates"].value,"xml")}}</Duplicates>
       <ID>{{cells["ID"].value,"xml")}}</ID>
+      <Duplicates>{{escape(cells["Duplicates"].value,"xml")}}</Duplicates>
       <CatOrTranslateDate>{{escape(cells["CatOrTranslateDate"].value,"xml")}}</CatOrTranslateDate>
       <PrimarySeller>{{escape(cells["PrimarySeller"].value,"xml")}}</PrimarySeller>
       <LatLng>{{escape(cells["LatLng"].value,"xml")}}</LatLng>
@@ -248,6 +248,7 @@ Row template:
       <Binding>{{escape(cells["Binding"].value,"xml")}}</Binding>
       <Provenance>{{escape(cells["Provenance"].value,"xml")}}</Provenance>
       <Comments>{{escape(cells["Comments"].value,"xml")}}</Comments>
+      <Coordinates>{{escape(cells["Coordinates"].value,"xml")}}</Coordinates>
    </record>
 ```
 
