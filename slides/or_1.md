@@ -144,4 +144,4 @@ Whenever we're done, we can rejoin this split data by selecting **Edit Cells** >
 
 ## Session 1 Questions?
 
-Go to [Session 2](https://github.com/DLFMetadataAssessment/2018MetadataAnalysisWorkshop/blob/master/or_2.md)
+Go to [Session 2](https://github.com/DLFMetadataAssessment/2018MetadataAnalysisWorkshop/blob/master/slides/or_2.md)
