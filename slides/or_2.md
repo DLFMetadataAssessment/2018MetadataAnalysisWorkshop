@@ -98,28 +98,17 @@ Why would we change text into date content? Once datachunks are coded as dates, 
 
 <details>
 
-If you split apart multi-values for the *Author* column, you may see the Records count jump from 1,633 to 1,679. This is because the dataset includes "empty" values (ie, only pipe-delimiters) within this column. In the below picture, note the successive pipes ("||||") and the values that begin with pipes ("|Bonaventure, Saint, Cardinal"):
+If you facet on the *Author* column, you may see a number of values that begin with our pipe delimiter. This is because the dataset includes "empty" values (ie, only pipe-delimiters) within this column. Let's clean this up by removing these empty values.
 
-![refine-8b.png](images/refine-8b.png)
+First, undo any split values on the Author column; then, run a filter on it. We're going to use a regular expression that looks for any values that begin with pipes:
 
-This will cause empty rows, and by extension, a false record count. We can combat this by removing these empty values.
+`(^\|)`
 
-First, undo any split values on the Author column; then, run a filter on it. We're going to use a regular expression that looks for any values that begin with pipes, end with pipes, or has consecutive pipes:
+This should give us 7 values. Instead of editing them by hand, we will open a Transform window on our filtered column, and use this GREL:
 
-`(^\|)|(\| \|)|(\|$)`
+`value.replace(/^\|/, '')`
 
-This should give us 32 values. The first two can be remediated by hand directly from the facet. Instead of editing the remaining ones by hand, we will open a Transform window on our filtered column, and use this GREL:
-
-`value.replace(/^\|/, '').replace('| | |','|').replace('| |','|').replace(/\|$/, '').replace(/^\ $/, '')`
-
-This RegEx explained:
-1. The first value of this Replace command is a RegEx that isolates the pipe character when it appears at the beginning of the string, replacing it with nothing;
-2. The second and third look for multiple pipes separated with white space, replacing them with a single pipe;
-3. The fourth looks for single pipes at the ends of values; and
-4. The final cleans up any entries that only have a blank space left.
-
-Once the transformation is run, you should be left with 1,633 records again.
-
+This GREL expression uses a regular expression to isolate pipe characters appearing at the beginning of a string, replacing it with nothing.
 </details>
 
 ## Validating Data
