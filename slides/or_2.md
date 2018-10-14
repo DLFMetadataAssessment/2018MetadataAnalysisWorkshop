@@ -1,6 +1,6 @@
 # OpenRefine, DLF Metadata QA Workshop 2018
 
-* OpenRefine Tutorial, Hour Two (1:30 - 2:15 PM), led by [Scotty Carlson, Metadata Coordinator @ Fondren Library, Rice University](mailto:sjc5@rice.edu)*
+*OpenRefine Tutorial, Hour Two (1:30 - 2:15 PM), led by [Scott Carlson, Metadata Coordinator @ Fondren Library, Rice University](mailto:sjc5@rice.edu)*
 
 ## Goals of This Module:
 * Data Remediation
