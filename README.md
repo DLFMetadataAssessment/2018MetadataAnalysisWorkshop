@@ -15,7 +15,7 @@ This five-hour workshop is a revised version of the metadata analysis workshop o
 | 12:00 - 12:10 pm | Morning wrap-up | Anna | |
 | 12:10 - 1:30 pm | Lunch | - | - |
 | 1:30 - 2:15 pm | OpenRefine Tutorial Hour Two | Scott | [Hour Two](https://github.com/DLFMetadataAssessment/2018MetadataAnalysisWorkshop/blob/master/slides/or_2.md) |
-| 2:15 - 2:45 pm | Metadata Analysis Tools Demo | Amy | [Slides](https://github.com/DLFMetadataAssessment/2018MetadataAnalysisWorkshop/blob/master/slides/Metadata_Management_with_ExifTool_MDQC.pptx)|
+| 2:15 - 2:45 pm | Metadata Analysis Tools Demo | Amy | [Slides](https://github.com/DLFMetadataAssessment/2018MetadataAnalysisWorkshop/blob/master/slides/Metadata_Management_with_ExifTool_MDQC.pdf)|
 | 2:45-3:15 pm | Ligntning Talks and Discussion | Workshop Participants | |
 | 3:15-3:30 pm | Wrap-up | Kate | [Slides](https://github.com/DLFMetadataAssessment/2018MetadataAnalysisWorkshop/blob/master/slides/wrap-up.pptx) |
 
